@@ -31,8 +31,8 @@ def main() -> None:
     try:
         number = user_input()
 
-    except (TypeError, ValueError, KeyboardInterrupt) as error:
-        print(f"Error : {error}") 
+    except (KeyboardInterrupt, EOFError) as error:
+        print(f"\n Exiting the program.") 
         return
     print("\n".join(print_table(number)))                       
             
