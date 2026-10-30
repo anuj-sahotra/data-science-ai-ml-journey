@@ -1,8 +1,11 @@
 import random
 
-emojis = {"r" : "💎", "s" : "'✂", "p" : "📄"}
-choices = ["r", "p", "s"]
+Rock = 'r'
+Paper = 'p'
+Scissor = 's'
 
+emojis = {Rock : "💎", Scissor : "'✂", Paper : "📄"}
+choices = tuple(emojis.keys())
 def get_user_choice():
     while True:
         user_input = input("Rock, Paper, Scissor? (r/p/s) : ").lower().strip()
@@ -19,9 +22,9 @@ def determine_winner(user_input, computer):
     if user_input == computer:
         print("Tie")
     elif(
-        (user_input == "r" and computer == "s") or 
-        (user_input == "s" and computer == "p") or 
-        (user_input == "p" and computer == "r")):
+        (user_input == Rock and computer == Scissor) or 
+        (user_input == Scissor and computer == Paper) or 
+        (user_input == Paper and computer == Rock)):
         print("YOU WIN!!!")      
     else:
         print("Computer Win!!!")
